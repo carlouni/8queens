@@ -4,6 +4,9 @@ import com.example.java.model.Pair;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
+/**
+ * Main class solving "The Eight Queens" problem.
+ */
 public class Main {
 
     public static void main(String[] args) {
@@ -37,9 +40,9 @@ public class Main {
      * @param row row on the chessboard
      * @param possibleSolution list of pairs of potential solution
      * @param solutions list of valid solutions
-     * @return
+     * @return Pair
      */
-    private static Pair traverse(ArrayList<Pair> list, short row, ArrayList<Pair> possibleSolution, ArrayList<ArrayList<Pair>> solutions) {
+    public static Pair traverse(ArrayList<Pair> list, short row, ArrayList<Pair> possibleSolution, ArrayList<ArrayList<Pair>> solutions) {
         ArrayList<Pair> newList = list
                 .stream()
                 .filter((Pair pair) -> pair.x == row)
@@ -67,9 +70,9 @@ public class Main {
      * @param list available positions
      * @param x row on the chessboard
      * @param y column on the chessboard
-     * @return
+     * @return ArrayList<Pair>
      */
-    private static ArrayList<Pair> pickPair(ArrayList<Pair> list, short x, short y) {
+    public static ArrayList<Pair> pickPair(ArrayList<Pair> list, short x, short y) {
         ArrayList<Pair> newList = new ArrayList<>();
 
         // clear positions where other queens can't be placed
@@ -82,9 +85,9 @@ public class Main {
 
     /**
      * Generate an empty chessboard.
-     * @return
+     * @return ArrayList<Pair>
      */
-    private static ArrayList<Pair> getEmptyBoard() {
+    public static ArrayList<Pair> getEmptyBoard() {
         ArrayList<Pair> list = new ArrayList<>();
         for (short i = 0; i < 8; i++) {
             for (short j = 0; j < 8; j++) {
